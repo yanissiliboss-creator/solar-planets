@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetele Sistemului Solar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #a0aab5;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .planet-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .planet-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+            border-color: rgba(0, 255, 255, 0.4);
+        }
+
+        .planet-marker {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5);
+        }
+
+        /* Culori stilizate pentru „planete” */
+        .mercur  { background: radial-gradient(circle, #888888, #555555); }
+        .venus   { background: radial-gradient(circle, #e3bb76, #a17438); }
+        .terra   { background: radial-gradient(circle, #2b82c9, #1a365d); box-shadow: 0 0 15px rgba(43, 130, 201, 0.5); }
+        .marte   { background: radial-gradient(circle, #c1440e, #732408); }
+        .jupiter { background: radial-gradient(circle, #b07f35, #593e1a); }
+        .saturn  { background: radial-gradient(circle, #e2bf7d, #8f713b); position: relative; }
+        /* Efect de inel pentru Saturn */
+        .saturn::after {
+            content: '';
+            position: absolute;
+            width: 110px;
+            height: 10px;
+            border: 4px solid rgba(226, 191, 125, 0.6);
+            border-radius: 50%;
+            transform: rotate(-15deg);
+        }
+        .uranus  { background: radial-gradient(circle, #4b70dd, #192857); }
+        .neptun  { background: radial-gradient(circle, #274687, #0c1b3d); }
+
+        .planet-card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .planet-type {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+
+        .planet-card p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Planetele Sistemului Solar</h1>
+        <p>O călătorie rapidă prin vecinătatea noastră cosmică, în ordinea distanței față de Soare.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Mercur -->
+        <div class="planet-card">
+            <div class="planet-marker mercur"></div>
+            <h2>Mercur</h2>
+            <div class="planet-type">Planetă Terestră</div>
+            <p>Cea mai apropiată planetă de Soare și cea mai mică din sistemul solar. Nu are atmosferă semnificativă și are temperaturi extreme.</p>
+        </div>
+
+        <!-- Venus -->
+        <div class="planet-card">
+            <div class="planet-marker venus"></div>
+            <h2>Venus</h2>
+            <div class="planet-type">Planetă Terestră</div>
+            <p>A doua planetă de la Soare. Este cea mai fierbinte planetă din cauza unui efect de seră masiv declanșat de atmosfera sa densă.</p>
+        </div>
+
+        <!-- Terra -->
+        <div class="planet-card">
+            <div class="planet-marker terra"></div>
+            <h2>Terra</h2>
+            <div class="planet-type">Planetă Terestră</div>
+            <p>Casa noastră. Singura planetă cunoscută care adăpostește viață, având apă lichidă la suprafață și o atmosferă bogată în oxigen.</p>
+        </div>
+
+        <!-- Marte -->
+        <div class="planet-card">
+            <div class="planet-marker marte"></div>
+            <h2>Marte</h2>
+            <div class="planet-type">Planetă Terestră</div>
+            <p>Cunoscută sub numele de „Planeta Roșie” datorită oxidului de fier de la suprafață. Găzduiește cel mai mare vulcan din sistemul solar, Olympus Mons.</p>
+        </div>
+
+        <!-- Jupiter -->
+        <div class="planet-card">
+            <div class="planet-marker jupiter"></div>
+            <h2>Jupiter</h2>
+            <div class="planet-type">Gigant Gazos</div>
+            <p>Cea mai mare planetă din sistemul solar. Este un gigant gazos celebru pentru Marea Pată Roșie, o furtună uriașă care durează de secole.</p>
+        </div>
+
+        <!-- Saturn -->
+        <div class="planet-card">
+            <div class="planet-marker saturn"></div>
+            <h2>Saturn</h2>
+            <div class="planet-type">Gigant Gazos</div>
+            <p>A doua ca mărime, recunoscută instantaneu datorită sistemului său spectaculos și complex de inele formate din gheață și rocă.</p>
+        </div>
+
+        <!-- Uranus -->
+        <div class="planet-card">
+            <div class="planet-marker uranus"></div>
+            <h2>Uranus</h2>
+            <div class="planet-type">Gigant Ghețos</div>
+            <p>O planetă de gheață cu o culoare azurie distinctă. Are o caracteristică unică: se rotește practic pe o parte (axa sa este foarte înclinată).</p>
+        </div>
+
+        <!-- Neptun -->
+        <div class="planet-card">
+            <div class="planet-marker neptun"></div>
+            <h2>Neptun</h2>
+            <div class="planet-type">Gigant Ghețos</div>
+            <p>Cea mai îndepărtată planetă de Soare. Este o lume albastră, înghețată, măturată de cele mai puternice vânturi din sistemul solar.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Ghidul Sistemului Solar. Creat cu scop educativ.</p>
+    </footer>
+
+</body>
+</html>
